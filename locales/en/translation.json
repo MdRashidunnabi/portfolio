@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "education": "Education",
+    "research": "Research",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "home": {
+    "greeting": "Hi, I'm MD RASHIDUNNABI",
+    "title": "Data Scientist & AI Researcher",
+    "intro": "As a Data Science Master's graduate from Munster Technological University with a deep focus on machine learning applications in healthcare, I am passionately pursuing a doctoral program to further refine and expand my expertise in data science and AI.",
+    "current": "Currently pursuing a PhD in Artificial Intelligence at UBI-University of Beira Interior, specializing in computer vision and deep learning applications.",
+    "buttons": {
+      "about": "About Me",
+      "research": "View Research"
+    }
+  }
+} 

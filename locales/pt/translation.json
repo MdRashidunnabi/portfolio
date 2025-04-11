@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "experience": "Experiência",
+    "education": "Educação",
+    "research": "Pesquisa",
+    "contact": "Contato",
+    "language": "Idioma"
+  },
+  "home": {
+    "greeting": "Olá, sou MD RASHIDUNNABI",
+    "title": "Cientista de Dados & Pesquisador em IA",
+    "intro": "Como mestre em Ciência de Dados pela Universidade Tecnológica de Munster, com foco profundo em aplicações de aprendizado de máquina na área da saúde, estou seguindo apaixonadamente um programa de doutorado para refinar e expandir ainda mais minha experiência em ciência de dados e IA.",
+    "current": "Atualmente fazendo doutorado em Inteligência Artificial na UBI-Universidade da Beira Interior, especializando-me em visão computacional e aplicações de aprendizado profundo.",
+    "buttons": {
+      "about": "Sobre Mim",
+      "research": "Ver Pesquisa"
+    }
+  }
+} 
