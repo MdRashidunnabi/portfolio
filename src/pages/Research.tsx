@@ -21,7 +21,7 @@ const research: Research[] = [
     title: "Causality and \"In-the-Wild\" Video-Based Person Re-ID: A Survey",
     type: "Survey",
     year: "2025",
-    venue: "arXiv",
+    venue: "SUBMITTED TO Electronics",
     link: "https://doi.org/10.48550/arXiv.2505.20540",
     icon: <ArticleIcon fontSize="large" />
   },
@@ -29,7 +29,7 @@ const research: Research[] = [
     title: "DetReIDX: A Stress-Test Dataset for Real-World UAV-Based Person Recognition",
     type: "Dataset",
     year: "2025",
-    venue: "arXiv",
+    venue: "SUBMITTED TO IEEE TRANSACTIONS ON BIOMETRICS, BEHAVIOR, AND IDENTITY SCIENCE",
     dataset: "https://www.it.ubi.pt/DetReIDX/",
     link: "https://arxiv.org/abs/2505.04793",
     icon: <ArticleIcon fontSize="large" />
@@ -111,9 +111,9 @@ const ResearchPage = () => {
                   {item.icon}
                 </Box>
                 <Box sx={{ flex: 1 }}>
-                  {item.link ? (
+                  {item.link || item.doi ? (
                     <Link
-                      href={item.link}
+                      href={item.link || `https://doi.org/${item.doi}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       sx={{
