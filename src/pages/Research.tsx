@@ -17,6 +17,22 @@ interface Research {
 
 const research: Research[] = [
   {
+    title: "Causality and \"In-the-Wild\" Video-Based Person Re-ID: A Survey",
+    type: "Survey",
+    year: "2025",
+    venue: "arXiv",
+    link: "https://doi.org/10.48550/arXiv.2505.20540",
+    icon: <ArticleIcon fontSize="large" />
+  },
+  {
+    title: "DetReIDX: A Stress-Test Dataset for Real-World UAV-Based Person Recognition",
+    type: "Dataset",
+    year: "2025",
+    venue: "arXiv",
+    link: "https://arxiv.org/abs/2505.04793",
+    icon: <ArticleIcon fontSize="large" />
+  },
+  {
     title: "Advanced Long-Range Person Detection in Ultra-Low Resolution Videos Using Deep Learning and Generative Modeling",
     type: "Paper",
     year: "2024",
