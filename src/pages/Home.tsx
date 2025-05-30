@@ -1,7 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Typography, Container, Button, Box, Stack, useTheme } from '@mui/material';
+import { Typography, Container, Button, Box, Stack, useTheme, Chip, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import SchoolIcon from '@mui/icons-material/School';
+import LaunchIcon from '@mui/icons-material/Launch';
+import DatasetIcon from '@mui/icons-material/Dataset';
 
 const Home: React.FC = () => {
   const theme = useTheme();
@@ -49,11 +53,39 @@ const Home: React.FC = () => {
                   fontSize: { xs: '1.6rem', sm: '1.8rem', md: '2.1rem' },
                   fontWeight: 600,
                   color: '#2d2d2d',
-                  mb: 4
+                  mb: 3
                 }}
               >
                 Data Scientist & AI Researcher
               </Typography>
+              
+              {/* Lab Affiliation */}
+              <Box sx={{ mb: 4 }}>
+                <Chip
+                  icon={<SchoolIcon />}
+                  label="Intelligent Systems Lab - University of Beira Interior"
+                  clickable
+                  component="a"
+                  href="https://intelligentsystemsubi.github.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    bgcolor: '#e3f2fd',
+                    color: '#1976d2',
+                    fontSize: '0.9rem',
+                    height: 'auto',
+                    py: 1,
+                    px: 2,
+                    '&:hover': {
+                      bgcolor: '#bbdefb'
+                    },
+                    '& .MuiChip-icon': {
+                      color: '#1976d2'
+                    }
+                  }}
+                />
+              </Box>
+
               <Typography 
                 variant="body1" 
                 sx={{ 
@@ -71,13 +103,107 @@ const Home: React.FC = () => {
                 sx={{ 
                   fontSize: { xs: '1.05rem', md: '1.15rem' },
                   color: '#4a4a4a',
-                  mb: 5,
+                  mb: 4,
                   lineHeight: 1.8,
                   maxWidth: '90%'
                 }}
               >
                 Currently pursuing a PhD in Artificial Intelligence at UBI-University of Beira Interior, specializing in computer vision and deep learning applications.
               </Typography>
+
+              {/* Professional Links */}
+              <Box sx={{ mb: 4 }}>
+                <Typography variant="h6" sx={{ mb: 2, color: '#2d2d2d', fontWeight: 600 }}>
+                  Connect & Explore
+                </Typography>
+                <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
+                  <IconButton
+                    component="a"
+                    href="https://www.linkedin.com/in/mdrashidunnabi/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      bgcolor: '#0077b5',
+                      color: 'white',
+                      '&:hover': { bgcolor: '#005885' }
+                    }}
+                    size="large"
+                  >
+                    <LinkedInIcon />
+                  </IconButton>
+                  <Button
+                    component="a"
+                    href="https://scholar.google.com/citations?user=0_6ryVoAAAAJ&hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="outlined"
+                    startIcon={<SchoolIcon />}
+                    endIcon={<LaunchIcon />}
+                    sx={{
+                      borderColor: '#4285f4',
+                      color: '#4285f4',
+                      textTransform: 'none',
+                      '&:hover': {
+                        borderColor: '#3367d6',
+                        bgcolor: 'rgba(66, 133, 244, 0.04)'
+                      }
+                    }}
+                  >
+                    Google Scholar
+                  </Button>
+                  <Button
+                    component="a"
+                    href="https://www.it.ubi.pt/DetReIDX/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="outlined"
+                    startIcon={<DatasetIcon />}
+                    endIcon={<LaunchIcon />}
+                    sx={{
+                      borderColor: '#ff6b35',
+                      color: '#ff6b35',
+                      textTransform: 'none',
+                      '&:hover': {
+                        borderColor: '#e55a2b',
+                        bgcolor: 'rgba(255, 107, 53, 0.04)'
+                      }
+                    }}
+                  >
+                    DetReIDX Dataset
+                  </Button>
+                </Stack>
+              </Box>
+
+              {/* Featured Dataset Highlight */}
+              <Box sx={{ 
+                bgcolor: 'rgba(255, 107, 53, 0.08)', 
+                p: 3, 
+                borderRadius: 2, 
+                border: '1px solid rgba(255, 107, 53, 0.2)',
+                mb: 4
+              }}>
+                <Typography variant="h6" sx={{ color: '#d84315', mb: 1, fontWeight: 600 }}>
+                  🚀 Featured Contribution
+                </Typography>
+                <Typography variant="body2" sx={{ color: '#5d4037', mb: 2 }}>
+                  <strong>DetReIDX:</strong> A comprehensive UAV-based person recognition dataset with <strong>509 identities</strong>, <strong>13M+ annotations</strong>, and <strong>18 viewpoints</strong> across altitudes up to 120m. This benchmark advances real-world aerial surveillance research.
+                </Typography>
+                <Button
+                  component="a"
+                  href="https://www.it.ubi.pt/DetReIDX/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  size="small"
+                  sx={{
+                    color: '#d84315',
+                    textTransform: 'none',
+                    '&:hover': { bgcolor: 'rgba(216, 67, 21, 0.04)' }
+                  }}
+                >
+                  Explore Dataset →
+                </Button>
+              </Box>
+              
               <Stack 
                 direction="row" 
                 spacing={3}
