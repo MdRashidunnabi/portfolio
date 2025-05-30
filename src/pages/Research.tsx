@@ -11,6 +11,7 @@ interface Research {
   year: string;
   venue?: string;
   link?: string;
+  dataset?: string;
   doi?: string;
   icon: React.ReactNode;
 }
@@ -29,6 +30,7 @@ const research: Research[] = [
     type: "Dataset",
     year: "2025",
     venue: "arXiv",
+    dataset: "https://www.it.ubi.pt/DetReIDX/",
     link: "https://arxiv.org/abs/2505.04793",
     icon: <ArticleIcon fontSize="large" />
   },
@@ -109,9 +111,25 @@ const ResearchPage = () => {
                   {item.icon}
                 </Box>
                 <Box sx={{ flex: 1 }}>
-                  <Typography variant="h5" component="h2" gutterBottom color="primary" sx={{ fontWeight: 500 }}>
-                    {item.title}
-                  </Typography>
+                  {item.link ? (
+                    <Link
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      sx={{
+                        textDecoration: 'none',
+                        '&:hover': { textDecoration: 'underline' }
+                      }}
+                    >
+                      <Typography variant="h5" component="h2" gutterBottom color="primary" sx={{ fontWeight: 500 }}>
+                        {item.title}
+                      </Typography>
+                    </Link>
+                  ) : (
+                    <Typography variant="h5" component="h2" gutterBottom color="primary" sx={{ fontWeight: 500 }}>
+                      {item.title}
+                    </Typography>
+                  )}
                   <Typography variant="subtitle1" color="text.secondary" gutterBottom>
                     {item.type} • {item.year}
                   </Typography>
@@ -120,7 +138,7 @@ const ResearchPage = () => {
                       {item.venue}
                     </Typography>
                   )}
-                  <Box sx={{ mt: 2, display: 'flex', gap: 2 }}>
+                  <Box sx={{ mt: 2, display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                     {item.link && (
                       <Link
                         href={item.link}
@@ -133,6 +151,20 @@ const ResearchPage = () => {
                         }}
                       >
                         View PDF
+                      </Link>
+                    )}
+                    {item.dataset && (
+                      <Link
+                        href={item.dataset}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          color: 'primary.main',
+                          textDecoration: 'none',
+                          '&:hover': { textDecoration: 'underline' }
+                        }}
+                      >
+                        Dataset
                       </Link>
                     )}
                     {item.doi && (
